@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Sports Massage services in the UK. Expert therapists specializing in injury recovery, muscle tension relief, and athletic performance.">
+    <title>Sports Massage UK - Professional Therapeutic Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a472a 0%, #2d6a4f 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #a8dadc;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2d6a4f 0%, #1a472a 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            background-image: 
+                linear-gradient(135deg, rgba(45, 106, 79, 0.9) 0%, rgba(26, 71, 42, 0.9) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #a8dadc;
+            color: #1a472a;
+        }
+
+        .btn-primary:hover {
+            background-color: #f1faee;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: #1a472a;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .services {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a472a;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: #2d6a4f;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: #1a472a;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.9;
+        }
+
+        .testimonials {
+            background-color: #f8f9fa;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #a8dadc;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .testimonial p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #1a472a;
+            font-weight: bold;
+        }
+
+        .pricing {
+            background: white;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            border-color: #2d6a4f;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card h3 {
+            color: #1a472a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            color: #2d6a4f;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .price-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #2d6a4f 0%, #1a472a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            margin: 0;
+        }
+
+        footer {
+            background-color: #1a472a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Sports Massage UK</div>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Professional Sports Massage Therapy</h1>
+        <p>Expert therapeutic services to enhance performance, accelerate recovery, and eliminate muscle tension</p>
+        <div class="cta-buttons">
+            <a href="#contact" class="btn btn-primary">Book Your Session</a>
+            <a href="#services" class="btn btn-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Sports Massage</h3>
+                    <p>Specialized massage techniques designed for athletes. Improves flexibility, reduces muscle tension, and enhances athletic performance for optimal results.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Injury Recovery</h3>
+                    <p>Targeted therapy to accelerate recovery from sports injuries. Our therapists work with acute and chronic injuries to restore full function and mobility.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Deep Tissue Massage</h3>
+                    <p>Intensive therapy targeting deep muscle layers. Perfect for chronic tension, muscle knots, and post-workout recovery to restore optimal muscle condition.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Performance Enhancement</h3>
+                    <p>Pre-event and post-event massage to maximize athletic potential. Improve circulation, reduce injury risk, and accelerate recovery between competitions.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Rehabilitation Therapy</h3>
+                    <p>Guided recovery programs tailored to your specific condition. We work alongside medical professionals to restore strength and mobility safely.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Wellness Maintenance</h3>
+                    <p>Regular maintenance sessions to prevent injury and maintain peak physical condition. Keep your body in optimal working order year-round.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Sports Massage UK</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose Our Team?</h2>
+                    <p>Sports Massage UK brings together highly qualified therapists with extensive experience in sports medicine and athletic training. We're dedicated to helping athletes and active individuals achieve their performance goals.</p>
+                    <p>Our therapists are certified and trained in the latest techniques. We combine traditional massage therapy with modern sports science to deliver exceptional results for every client.</p>
+                    <p>Whether you're training for competition, recovering from injury, or simply maintaining your physical health, we're here to support your wellness journey with professional expertise and personalized care.</p>
+                </div>
+                <div class="about-text">
+                    <h2>Our Expertise</h2>
+                    <p><strong>✓ Certified Therapists</strong> - Fully qualified professionals with sports medicine expertise</p>
+                    <p><strong>✓ Personalized Approach</strong> - Customized treatment plans for your specific needs</p>
+                    <p><strong>✓ Evidence-Based</strong> - Techniques backed by sports science research</p>
+                    <p><strong>✓ Client Results</strong> - Proven track record of performance improvements and injury recovery</p>
+                    <p><strong>✓ Professional Standards</strong> - Maintaining highest industry standards and client care protocols</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Excellent service! My recurring shoulder pain is finally gone after just three sessions. The therapists really know their craft."</p>
+                    <p class="testimonial-author">- James Mitchell, Marathon Runner</p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Professional, knowledgeable, and incredibly effective. I've noticed significant improvement in my recovery time and flexibility."</p>
+                    <p class="testimonial-author">- Sarah Thompson, Footballer</p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"After my knee injury, I wasn't sure I'd return to tennis. The rehabilitation program here has been transformative. Highly recommended!"</p>
+                    <p class="testimonial-author">- Michael Chen, Tennis Player</p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"The attention to detail is remarkable. They take time to understand your specific issues and address them with precision."</p>
+                    <p class="testimonial-author">- Emma Wilson, Gym Enthusiast</p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Before competitions, their pre-event massage gives me the confidence and performance edge I need. Worth every penny!"</p>
+                    <p class="testimonial-author">- David Roberts, Rugby Player</p>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Fantastic experience from start to finish. The therapists are not just skilled but genuinely care about their clients' wellbeing."</p>
+                    <p class="testimonial-author">- Lisa Anderson, Fitness Coach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Pricing Plans</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Single Session</h3>
+                    <div class="price">£60</div>
+                    <p class="price-description">60-minute session</p>
+                    <p>Perfect for first-time clients or occasional maintenance therapy</p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem; width: 100%; max-width: none;">Book Now</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Package of 5</h3>
+                    <div class="price">£275</div>
+                    <p class="price-description">£55 per session (Save £25)</p>
+                    <p>Ideal for injury recovery or regular maintenance therapy</p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem; width: 100%; max-width: none;">Book Package</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Monthly Plan</h3>
+                    <div class="price">£240</div>
+                    <p class="price-description">4 sessions per month</p>
+                    <p>Best value for ongoing wellness and athletic performance optimization</p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top: 1rem; width: 100%; max-width: none;">Subscribe</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Get in Touch</h2>
+                <p>Ready to start your journey to better health and performance? Contact us today to book your appointment or learn more about our services.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+441234567890" style="color: #a8dadc; text-decoration: none;">+44 (0) 123 456 7890</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@sportsmassageuk.com" style="color: #a8dadc; text-decoration: none;">info@sportsmassageuk.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Hours</h4>
+                        <p>Mon-Sat: 9am-6pm<br>Sun: 10am-4pm</p>
+                    </div>
+                </div>
+                <a href="mailto:info@sportsmassageuk.com" class="btn btn-primary" style="margin-top: 2rem;">Send Enquiry</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Sports Massage UK. All rights reserved. | Professional Sports Therapy Services</p>
+    </footer>
+</body>
+</html>
